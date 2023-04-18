@@ -9,7 +9,11 @@
     "socket.io": "^4.6.1"
   },
   "devDependencies": {
-    "eslint": "^8.38.0"
+    "@babel/core": "^7.21.4",
+    "@babel/eslint-parser": "^7.21.3",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
   },
   "scripts": {
     "dev": "nodemon server.js",
