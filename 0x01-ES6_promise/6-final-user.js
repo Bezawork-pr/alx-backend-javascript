@@ -8,11 +8,15 @@ export default function handleProfileSignup(firstName, lastName, fileName){
 	return Promise.allSettled([signUp, upload]).
 		then((results) => results.forEach((result) => { 
 			if(result.status == "fulfilled"){
-				obj.push(result);
+				obj.push({
+					status: "fulfilled",
+					value: result,
+				});
+		//);
 			}else {
 				obj.push(
 					{
-						status: result.status,
+						status: "rejected",
 						value: result.reason.meassage,
 					});
 			};
