@@ -16,6 +16,7 @@ module.exports = {
   plugins: ["jest"],
   parserOptions: {
     ecmaVersion: 'latest',
+    sourceType: "module"
   },
   rules: {
   },
