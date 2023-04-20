@@ -9,7 +9,8 @@ export default class HolbertonCourse {
     if (!Array.isArray(students)) {
       throw TypeError('Students must be an array');
     }
-    if (students.every((i) => typeof i === 'string')) {
+    const stdbool = students.every((i) => typeof i === 'string');
+    if (stdbool === false) {
       throw TypeError('Students array must be of string');
     }
     this._name = name;
@@ -47,7 +48,8 @@ export default class HolbertonCourse {
     if (!Array.isArray(value)) {
       throw TypeError('Students must be an array');
     }
-    if (value.every((i) => typeof i === 'string')) {
+    const valbool = value.every((i) => typeof i === 'string');
+    if (valbool === false) {
       throw TypeError('Students array must be of string');
     }
     this._length = value;
