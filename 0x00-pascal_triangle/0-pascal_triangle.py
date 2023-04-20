@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+from math import factorial
 def pascal_triangle(n):
     my_list = []
     if n <= 0:
         return my_list
     for row in range(n):
-        listinlist = [1]
+        new_list = [1]
         for column in range(row):
             if column == row - 1:
                 my_append = 1
@@ -20,7 +21,7 @@ def pascal_triangle(n):
                 my_append = row
             else:
                 pass
-            listinlist.append(my_append)
-        my_list.append(listinlist)
-        del listinlist
+            new_list.append(my_append)
+        my_list.append(new_list)
+        del new_list
     return my_list
