@@ -1,12 +1,12 @@
 interface DirectorInterface {
     workFromHome(): string;
     getCoffeeBreak(): string;
-    workDirectorTasks(): string;
+    workTask(): string;
 }
 interface TeacherInterface {
     workFromHome(): string;
     getCoffeeBreak(): string;
-    workTeacherTasks(): string;
+    workTask(): string;
 }
 class Director implements DirectorInterface {
     workFromHome() {
@@ -15,7 +15,7 @@ class Director implements DirectorInterface {
     getCoffeeBreak() {
         return "Getting a coffee break";
     }
-    workDirectorTasks() {
+    workTask() {
         return "Getting to director tasks";
     }
 }
@@ -26,7 +26,7 @@ class Teacher implements TeacherInterface {
     getCoffeeBreak() {
         return "Cannot have a break";
     }
-    workTeacherTasks() {
+    workTask() {
         return "Getting to work";
     }
 }
@@ -60,4 +60,11 @@ function isDirector(employee: TeacherInterface | DirectorInterface): true | fals
 
 }
 //console.log(executeWork(createEmployee(200)));
-
+type Subjects = "Math" | "History";
+function teachClass(todayClass: Subjects) {
+    if (todayClass == "Math") {
+        return "Teaching Math";
+    }
+    return "Teaching History";
+}
+//console.log(teachClass('Math'));
