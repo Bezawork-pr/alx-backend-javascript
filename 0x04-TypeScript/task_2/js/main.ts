@@ -47,16 +47,17 @@ function isDirector(employee: TeacherInterface | DirectorInterface): true | fals
     }
     return false;
 
-}
-function executeWork(employee: TeacherInterface | DirectorInterface): string {
+    }
+    function executeWork(employee: TeacherInterface | DirectorInterface): string {
     let output;
     console.log(employee);
     if (isDirector(employee) === true) {
-      output = employee.workTeacherTasks();
+      output = employee.workTask();
     } else {
-        output = employee.workTeacherTasks();
+        output = employee.workTask();
     }
     return output;
 
 }
-executeWork(createEmployee(200));
+//console.log(executeWork(createEmployee(200)));
+
