@@ -1,5 +1,12 @@
-console.log = process.stdout.write('Welcome to Holberton School, what is your name?');
-process.stdin.setEncoding('utf8')
-process.argv.forEach(function(val, index, array) {
-  console.log = val
+console.log('Welcome to Holberton School, what is your name?');
+process.stdin.setEncoding('utf8');
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
+  process.stdout.write(`Your name is: ${name}`);
+  if (process.stdin.isTTY) {
+    process.exit();
+  } else {
+    process.stdout.write('This important software is now closing\n');
+    process.exit();
+  }
 });
