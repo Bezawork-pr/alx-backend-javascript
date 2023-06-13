@@ -38,7 +38,7 @@ app.get('/students', (req, res) => {
     }
     myList.push(myDict);
   }
-  res.send(`Number of students: ${data.length}\nNumber of students in CS: ${cs}. List: ${csList.join(', ')}\nNumber of students in SWE: ${swe}. List: ${sweList.join(', ')}`);
+  res.send(`This is the list of our students\nNumber of students: ${data.length}\nNumber of students in CS: ${cs}. List: ${csList.join(', ')}\nNumber of students in SWE: ${swe}. List: ${sweList.join(', ')}`);
 })
 app.listen(port);
 module.exports = app;
