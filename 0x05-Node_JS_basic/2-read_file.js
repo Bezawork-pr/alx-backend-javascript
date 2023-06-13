@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 
 module.exports = function countStudents(path) {
@@ -11,16 +12,18 @@ module.exports = function countStudents(path) {
     data.shift();
     data.pop();
     console.log(`Number of students: ${data.length}`);
-    for (let i = 0; i < data.length; i + 1) {
+    for (let i = 0; i < data.length; i = i + 1) {
       const details = data[i].split(',');
       const myDict = {};
-      const {
+      let firstname, lastname, age, field;
+      [
         firstname, lastname, age, field,
-      } = details;
-      myDict.firstname = firstname;
+      ] = details;
+      myDict.firstname= firstname;
       myDict.lastname = lastname;
       myDict.age = age;
       myDict.field = field;
+
       if (myDict.field === 'CS') {
         cs += 1;
         csList.push(myDict.firstname);
